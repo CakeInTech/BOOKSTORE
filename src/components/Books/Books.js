@@ -1,36 +1,38 @@
-import React, { useState } from 'react';
-import AddBook from '../Addbooks/Addbook';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './Book.module.css';
+import { removeBook } from '../../src/redux/books/books';
 
-const Books = () => {
-  const [books, setBooks] = useState({
-    id: 1,
-    title: 'This is my book',
-    author: 'Written by me',
-  });
+const Books = (props) => {
+  const dispatch = useDispatch();
 
-  const getBooks = () => {
-    setBooks({ id: 1, title: 'This is my book', author: 'Written by me' });
-  };
-
-  const { id, title, author } = books;
+  const { details } = props;
   return (
-    // eslint-disable-next-line react/no-unknown-property
-    <div className={styles.Bookcontainer} onLoad={getBooks}>
-      <div className={styles.BookList}>
-        <ul className={styles.BookItem}>
-          <li>
-            <span>{id}</span>
-            <span> </span>
-            <span>{title}</span>
-            <span> </span>
-            <span>{author}</span>
-          </li>
-        </ul>
-      </div>
-      <AddBook />
+    <div>
+
+      {details.map((book) => (
+        <div className={styles.Bookcontainer} key={book.id}>
+          <span>{book.title}</span>
+          <span />
+          <span>{book.author}</span>
+          <span />
+          <span><button value="remove" type="button" onClick={() => dispatch(removeBook(book.id))}>Remove Book</button></span>
+
+        </div>
+      ))}
     </div>
   );
+};
+
+Books.propTypes = {
+  details: PropTypes.arrayOf(PropTypes.shape({
+    item_id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    map: PropTypes.objectOf(PropTypes.string),
+  }).isRequired).isRequired,
 };
 
 export default Books;
