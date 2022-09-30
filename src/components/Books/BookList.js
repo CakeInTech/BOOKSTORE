@@ -15,11 +15,12 @@ const BookLists = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Book List</h1>
-      <div className={styles.list}>
+      <section className={styles.list}>
         <Books books={books} />
-      </div>
-      <AddBook />
+      </section>
+      <section>
+        <AddBook />
+      </section>
     </div>
   );
 };
