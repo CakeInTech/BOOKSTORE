@@ -14,11 +14,38 @@ const Books = (props) => {
 
       {books.map((book) => (
         <div className={styles.Bookcontainer} key={book.id}>
-          <span>{book.title}</span>
-          <span />
-          <span>{book.author}</span>
-          <span />
-          <span><button value="remove" type="button" onClick={() => dispatch(removeBook(book.id))}>Remove Book</button></span>
+          <div className={styles.details}>
+            <h3>Category</h3>
+            <h2>{book.title}</h2>
+            <h4>{book.author}</h4>
+            <ul>
+              <li>Comments</li>
+              <li>
+                <button type="button" value="remove" onClick={() => dispatch(removeBook(book.id))}>Remove Book</button>
+              </li>
+              <li>
+                Edit
+              </li>
+            </ul>
+          </div>
+          <div className={styles.percentage}>
+            <div className={styles.spinner} />
+            <div>
+              <h2>
+                {Math.floor(Math.random() * 100)}
+                %
+              </h2>
+              <p>Completed</p>
+            </div>
+          </div>
+          <div className={styles.chapters}>
+            <h3>Current Chapter</h3>
+            <h4>
+              Chapter
+              {Math.floor(Math.random() * 10)}
+            </h4>
+            <button type="button">Update Chapter</button>
+          </div>
 
         </div>
       ))}
