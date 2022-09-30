@@ -18,13 +18,16 @@ const AddBook = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <p className={styles.miniheader}>Add New Book</p>
-      <form className={styles.formContainer} onSubmit={inputHandler}>
-        <input type="text" placeholder="Enter title of the book" id="title" className={styles.input} />
-        <input type="text" placeholder="Enter author name" id="author" className={styles.input} />
-        <button type="submit" value="Add" label="Add" className={styles.addbutton}>Add Book</button>
-      </form>
+    <div className={styles.Main}>
+      <div className={styles.FormContainer}>
+        <p className={styles.FormHeading}>Add New Book</p>
+        <form className={styles.AddBookForm} onSubmit={inputHandler}>
+          <input type="text" placeholder="Enter title of the book" id="title" className={styles.Input} />
+          <input type="text" placeholder="Enter author name" id="author" className={styles.Input} />
+          <button type="submit" value="Add" label="Add" className={styles.Input}>Add Book</button>
+        </form>
+
+      </div>
     </div>
   );
 };
