@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,11 +8,11 @@ import { removeBook } from '../../src/redux/books/books';
 const Books = (props) => {
   const dispatch = useDispatch();
 
-  const { details } = props;
+  const { books } = props;
   return (
     <div>
 
-      {details.map((book) => (
+      {books.map((book) => (
         <div className={styles.Bookcontainer} key={book.id}>
           <span>{book.title}</span>
           <span />
@@ -26,7 +27,7 @@ const Books = (props) => {
 };
 
 Books.propTypes = {
-  details: PropTypes.arrayOf(PropTypes.shape({
+  books: PropTypes.arrayOf(PropTypes.shape({
     item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
