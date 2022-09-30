@@ -1,18 +1,19 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import styles from './Addbook.module.css';
 import { addBook } from '../../src/redux/books/books';
 
-// const AddBook = () => (
-
-// );
-
 const AddBook = () => {
   const dispatch = useDispatch();
-
   const inputHandler = (e) => {
     e.preventDefault();
-    dispatch(addBook(e.target.title.value, e.target.author.value));
+    dispatch(addBook({
+      item_id: uuidv4(),
+      title: e.target.title.value,
+      author: e.target.author.value,
+      category: 'Fiction',
+    }));
     e.target.reset();
   };
 
