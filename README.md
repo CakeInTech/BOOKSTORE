@@ -13,7 +13,7 @@
 
 ## Live Demo (Deployed)
 
-[Click here!](cakesbookstore.netlify.app)
+[Click here!](https://cakesbookstore.netlify.app/)
 
 
 
