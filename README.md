@@ -11,9 +11,9 @@
 - Frameworks
 - Technologies used
 
-## Live Demo (if available)
+## Live Demo (Deployed)
 
-[Incomming ...](https://livedemo.com)
+[Click here!](cakesbookstore.netlify.app)
 
 
 
