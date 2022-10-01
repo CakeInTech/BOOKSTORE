@@ -1,23 +1,60 @@
-.container {
+.Main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 6.188rem 1.5rem 6.25rem;
+  width: 62.5%;
+  margin: 0 auto;
+}
+
+.AddBookForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.FormContainer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem;
 }
 
-.miniheader {
+.FormHeading {
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
 }
 
-.formContainer {
-  display: flex;
-  gap: 1rem;
-}
-
-.addbutton {
-  padding: 20px;
+.Input {
+  height: 2.813rem;
+  width: 100%;
+  text-transform: uppercase;
   border-radius: 4px;
-  box-shadow: 0 0 60px 0 var(--black-5);
-  background-color: #fafafa;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  padding: 0 10px;
+}
+
+.Input:last-child {
+  width: 13.5rem;
+  height: 2.813rem;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
 }
